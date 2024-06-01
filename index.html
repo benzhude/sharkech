@@ -50,12 +50,11 @@
         }
          .counter {
             color: rgb(235, 135, 14);
-            font-size: 80px;
             white-space: nowrap; /* 禁止換行 */
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 100%; /* 設置最大寬度以便在小螢幕上自適應 */
-        }  
+        }
         .copyright {
             position: absolute;
             bottom: 10px;
@@ -81,7 +80,7 @@
 <body>
     <div class="background"></div>
     <div id="app" class="content">
-      <h1 class="counter">功德:+ {{ count }}</h1>
+      <h1 class="counter" :style="{ fontSize: fontSize }">功德: {{ count }}</h1>
         <!-- 使用圖片作為按鈕，根據 clicked 狀態切換圖片 -->
         <img 
             :src="imageSrc" 
