@@ -78,6 +78,14 @@
                 }
             }
         }).mount('#app');
+            // 禁用右鍵點擊
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // 禁用拖動
+        document.addEventListener('dragstart', event => event.preventDefault());
+        
+        // 禁用文本選擇
+        document.addEventListener('selectstart', event => event.preventDefault());
     </script>
 </body>
 </html>
