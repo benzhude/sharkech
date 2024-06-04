@@ -87,9 +87,7 @@
             alt="Toggle Button" 
             class="button" 
             v-on:mousedown="onMouseDown" 
-            v-on:mouseup="onMouseUp" 
-            @touchstart="onTouchStart" 
-            @touchend="onTouchEnd"
+            v-on:mouseup="onMouseUp"  
         >
     </div>
     <div class="copyright">
@@ -111,23 +109,14 @@
             },
             methods: {
                 onMouseDown() {
-                  if (!this.isTouchDevice()){
                     this.clicked = true; // 按下滑鼠時設置為 true
                 },
                 onMouseUp() {
-                  if (!this.isTouchDevice()){
                     this.clicked = false; // 放開滑鼠時設置為 false
                     this.count++;
                 }
             },
-            onTouchStart() {
-                    this.clicked = true; // 觸摸開始時設置為 true
-                    
-            },
-                onTouchEnd() {
-                    this.clicked = false; // 觸摸結束時設置為 false
-                    this.count++;
-                }
+           
         }).mount('#app');
             // 禁用右鍵點擊
         document.addEventListener('contextmenu', event => event.preventDefault());
