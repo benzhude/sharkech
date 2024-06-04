@@ -111,9 +111,11 @@
             },
             methods: {
                 onMouseDown() {
+                  if (!this.isTouchDevice()){
                     this.clicked = true; // 按下滑鼠時設置為 true
                 },
                 onMouseUp() {
+                  if (!this.isTouchDevice()){
                     this.clicked = false; // 放開滑鼠時設置為 false
                     this.count++;
                 }
